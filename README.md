@@ -13,3 +13,4 @@
   + get vocals and focus on extracting the tempo, the chord and timing and form a database of that
   + get backing track and detect possible parts to add the vocals in.
   + I can just use backing track of EDM songs, classical music, dubstep music, catchy piano tunes and does not neccessarily have to be backtrack from pop songs.
+  + It would be good if I can do chorus, first/second lyrics detections and just apply that to specific time frame
