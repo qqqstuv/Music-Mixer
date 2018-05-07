@@ -15,3 +15,9 @@
   + get backing track and detect possible parts to add the vocals in.
   + I can just use backing track of EDM songs, classical music, dubstep music, catchy piano tunes and does not neccessarily have to be backtrack from pop songs.
   + It would be good if I can do chorus, first/second lyrics detections and just apply that to specific time frame
+  
+- Steps to be done to mix 2 songs:
+1. Detect the tempo
+2. Detect where to match
+
+- Case of Havana and Smooth: the chords don't match exactly but it still works magically.
