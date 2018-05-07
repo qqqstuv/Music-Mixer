@@ -4,6 +4,7 @@
 
 - I tried to mix Just a Dream by Nelly with If I were a boy by Beyonce on Adobe Audition. I downloaded the vocal for Just a Dream and the backing track for If I were a boy and just align them together. Since they have the same tempo and the same chords, it turns out to be pretty good. 
 - I tried mixing Love the way you lie with If I were a boy but there is a pause in the first song which makes everything out of sync without editing
+- I also tried to mix River Flows in you and Just A Dream with pitch -3 on River flows in you. It sounded great!
 - I feel like I need to detect the following:
   + tempo
   + where the chord begins
