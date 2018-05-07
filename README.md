@@ -3,3 +3,12 @@
 ### Update on May 7, 2018
 
 - I tried to mix Just a Dream by Nelly with If I were a boy by Beyonce on Adobe Audition. I downloaded the vocal for Just a Dream and the backing track for If I were a boy and just align them together. Since they have the same tempo and the same chords, it turns out to be pretty good. 
+- I tried mixing Love the way you lie with If I were a boy but there is a pause in the first song which makes everything out of sync without editing
+- I feel like I need to detect the following:
+  + tempo
+  + where the chord begins
+  + chord transposition for songs that have the same chords but at different transposition
+  
+- At this point, I think I have the following approaches:
+  + get vocals and focus on extracting the tempo, the chord and timing and form a database of that
+  + get backing track and detect possible parts to add the vocals in.
