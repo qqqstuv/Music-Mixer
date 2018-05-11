@@ -21,3 +21,9 @@
 2. Detect where to match
 
 - Case of Havana and Smooth: the chords don't match exactly but it still works magically.
+
+
+#### Update on May 10, 2018
+- Things to ask:
+  + Dynamic Time Wrapping and how I can use it to synchronize two songs.
+  + How to stretch a song based on tempo and to how cut songs in the right way.
