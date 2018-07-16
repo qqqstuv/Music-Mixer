@@ -99,3 +99,10 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#mp3, wav
+*.mp3
+*.wav
+
+#text file
+*.txt

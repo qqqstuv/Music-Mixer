@@ -27,3 +27,14 @@
 - Things to ask:
   + Dynamic Time Wrapping and how I can use it to synchronize two songs.
   + How to stretch a song based on tempo and to how cut songs in the right way.
+
+#### Update on July 15, 2018
+- Finally made some progress
+- Ditched DTW approach
+- Things to do:
+  Figure out how many bars each chord has
+  How to deal with songs that have the 7 chord
+  Can I mash songs with the same chord but different order? Possible wrong match
+  How about songs that can generate random chords
+  Sometimes I have divide by zero problem in numpy seemingly from librosa. How do I fix it?
+  Maybe only do different parts in segments?
