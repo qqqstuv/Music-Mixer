@@ -38,3 +38,9 @@
   How about songs that can generate random chords
   Sometimes I have divide by zero problem in numpy seemingly from librosa. How do I fix it?
   Maybe only do different parts in segments?
+  
+- Things can do:
+  Predict the final chord in the list
+  Group Similar processed chords together along with timestamp (Done)
+  Go to Alignment and fix the error sometimes it detect the wrong major/minor(For the 3rd part in just a dream)
+  
