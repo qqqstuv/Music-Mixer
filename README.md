@@ -32,15 +32,45 @@
 - Finally made some progress
 - Ditched DTW approach
 - Things to do:
-  Figure out how many bars each chord has
-  How to deal with songs that have the 7 chord
+  Figure out how many bars each chord has (Solved this my making an algorithm that detect chord automatically)
+  How to deal with songs that have the 7 chord (Cant)
   Can I mash songs with the same chord but different order? Possible wrong match
   How about songs that can generate random chords
   Sometimes I have divide by zero problem in numpy seemingly from librosa. How do I fix it?
   Maybe only do different parts in segments?
   
+
+#### Update on July 17, 2018  
 - Things can do:
   Predict the final chord in the list
   Group Similar processed chords together along with timestamp (Done)
   Go to Alignment and fix the error sometimes it detect the wrong major/minor(For the 3rd part in just a dream)
-  
+  Sometimes it detects the wrong shift because it assumes that the new bar starts at index 0 but the segment may be off
+
+
+#### Update on July 18, 2018
+- I think I have implemented a stable version of aligning chords given chords and beats 
+- I stop trying the segmentation for now.
+- Make sure spectral balance (low and high). High pass fitler, low pass filter
+
+#### Update on July 19, 2018
+C  Dm Em F  G  Am Bdim
+1  2  3  4  5  6  7
+- Some important distinction between the song order: C: 1, Am: 6, F: 4, G: 5
+  + “Just a Dream” Nelly 6-4-1-5
+  + "Crying" Aerosmith: 1-5-6-4
+  + "So Sick" Neyo 6-4-1-5
+
+- Maybe extract the song partially and only try to merge part of it. 
+- Song that have different ending/ different chord at the end
+
+
+#### Update on July 20,2018
+- Got a somewhat stable version working. Failed on "Con Mua Ngang Qua".
+- Maybe extract partially matching part of each chord.
+- TODO: optimize runtime in dbt
+- TODO: Adjust spectral balance in the final step
+
+#### Update on July 21, 2018
+- Need to fix audio produce no sound on give_your_heart_a_break and pay_phone
+- So Sick doesn't work

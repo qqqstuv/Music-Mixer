@@ -35,17 +35,20 @@ def slice_song_and_save(data, start, end, sr, name, idx=""):
     librosa.output.write_wav(out_filename, data, sr)
 
 
-def slice_song(file_name):
+def slice_song(file_name, start = 10, end=0):
     #slicing and save
     print("Slicing", file_name)
-    start = 10
-    duration = 150 + start
-    out_filename = file_name.replace(".wav","") +  str(start) + "_" + str(duration) + '.wav'
     y, sr = librosa.load(file_name, mono=False)
     # print(len(y), len(y[:duration*sr]))
-    y = y[start*sr: duration*sr]
+    if end == 0:
+        end = len(y) 
+    out_filename = file_name.replace(".wav","") +  str(start) + "_" + str(end // sr) + '.wav'
+
+    y = y[start*sr: end]
     librosa.output.write_wav(out_filename, y, sr)
 
-# convert_mp3_to_wav_mono("replay.mp3")
-# slice_song("replay.wav")
+# convert_mp3_to_wav_mono("nobody_s_perfect.mp3")
+
+
+# slice_song("demon_beat.wav", 5, 0)
 # resample("just_a_dream_vocal_mono.wav")
