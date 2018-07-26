@@ -10,6 +10,7 @@ from madmom.audio.signal import load_audio_file
 from madmom.audio.signal import resample
 from madmom.audio.chroma import DeepChromaProcessor
 import bisect
+import operator
 
 def load_librosa(name):
     data, sr = librosa.load(name)
@@ -56,11 +57,30 @@ def print_and_save_chord(file_name, timeline, chord, idx=""):
         file.write("%8.6f\t%8.6f\t%s\n" % (i,i,j)) 
     file.close()
 
-def get_chords_old(_time, data, sr):
+def get_chords_old(_time, data, sr, filtered= False):
     time = _time + [len(data) / sr]
     length_result = len(time) - 1
     chord_result = ["" for i in range(length_result)]
-    decode = DeepChromaChordRecognitionProcessor()    
+    decode = DeepChromaChordRecognitionProcessor()
+
+
+    chroma = DeepChromaProcessor()(data)
+    whole_song_chords = decode(chroma)
+    chords = [t[2] for t in whole_song_chords]
+    whole_song_chord_dict = dict()
+    
+    if filtered:
+        for chord in chords:
+            if chord not in whole_song_chord_dict:
+                whole_song_chord_dict[chord] = 0
+            whole_song_chord_dict[chord] += 1
+        whole_song_chord_dict = sorted(whole_song_chord_dict.items(), key=operator.itemgetter(1), reverse=True)
+        print(whole_song_chord_dict)
+        whole_song_chord_dict = [t[0] for t in whole_song_chord_dict[:4]]
+        print("Filter the following 4 chords", whole_song_chord_dict)
+
+  
+
     chord_dictionary = dict()
     for i in range(length_result):
         start_frame = int(time[i] * sr)
@@ -79,6 +99,14 @@ def get_chords_old(_time, data, sr):
             chord_dictionary[chord_name] = []
         chord_dictionary[chord_name].append(i)
         chord_result[i] = chord_name
+
+    if filtered:
+        for most_likely_chord in whole_song_chord_dict:
+            name, modification = most_likely_chord.split(":")
+            for i in range(len(chord_result)):
+                if chord_result[i].split(":")[0] == name:
+                    chord_result[i] = most_likely_chord
+
 
     return chord_dictionary, chord_result
 

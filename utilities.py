@@ -47,7 +47,8 @@ def slice_song(file_name, start = 10, end=0):
     y = y[start*sr: end]
     librosa.output.write_wav(out_filename, y, sr)
 
-# convert_mp3_to_wav_mono("nobody_s_perfect.mp3")
+# convert_mp3_to_wav_mono("holiday.mp3")
+# convert_mp3_to_wav_mono("holiday_vocal.mp3")
 
 
 # slice_song("demon_beat.wav", 5, 0)
