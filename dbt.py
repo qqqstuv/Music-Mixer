@@ -187,8 +187,8 @@ def compare(chords1, chords2):
 def getMatchingChord(chords1, chords2, chord_num=4):
     chords1 = [Chord(i.split(":")[0], i.split(":")[1]) for i in chords1]
     chords2 = [Chord(i.split(":")[0], i.split(":")[1]) for i in chords2]
-    print("chords1", [chord1.toString() for chord1 in chords1])
-    print("chords2", [chord1.toString() for chord1 in chords2])
+    print("chords1", [chord1.toString() for chord1 in chords1[:10]], len(chords1))
+    print("chords2", [chord1.toString() for chord1 in chords2[:10]], len(chords2))
     
     possible_result = []
     for idx in range(chord_num):
