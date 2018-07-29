@@ -35,17 +35,17 @@
   Figure out how many bars each chord has (Solved this my making an algorithm that detect chord automatically)
   How to deal with songs that have the 7 chord (Cant)
   Can I mash songs with the same chord but different order? Possible wrong match
-  How about songs that can generate random chords
-  Sometimes I have divide by zero problem in numpy seemingly from librosa. How do I fix it?
-  Maybe only do different parts in segments?
+  How about songs that can generate random chords (Nope)
+  Sometimes I have divide by zero problem in numpy seemingly from librosa. How do I fix it? (havent encountered it)
+  Maybe only do different parts in segments? (Hard to do)
   
 
 #### Update on July 17, 2018  
 - Things can do:
-  Predict the final chord in the list
+  Predict the final chord in the list (Solved)
   Group Similar processed chords together along with timestamp (Done)
-  Go to Alignment and fix the error sometimes it detect the wrong major/minor(For the 3rd part in just a dream)
-  Sometimes it detects the wrong shift because it assumes that the new bar starts at index 0 but the segment may be off
+  Go to Alignment and fix the error sometimes it detect the wrong major/minor(Implemented a different algorithm that fixed this)
+  Sometimes it detects the wrong shift because it assumes that the new bar starts at index 0 but the segment may be off (Implemented a different algorithm that fixed this)
 
 
 #### Update on July 18, 2018
@@ -61,16 +61,23 @@ C  Dm Em F  G  Am Bdim
   + "Crying" Aerosmith: 1-5-6-4
   + "So Sick" Neyo 6-4-1-5
 
-- Maybe extract the song partially and only try to merge part of it. 
+- Maybe extract the song partially and only try to merge part of it.  
 - Song that have different ending/ different chord at the end
 
 
 #### Update on July 20,2018
-- Got a somewhat stable version working. Failed on "Con Mua Ngang Qua".
+- Got a somewhat stable version working. Failed on "Con Mua Ngang Qua". Problem is that it doesnt match for the first half of the song because after the first verse, they took a bar off.
 - Maybe extract partially matching part of each chord.
 - TODO: optimize runtime in dbt
-- TODO: Adjust spectral balance in the final step
+- TODO: Adjust spectral balance in the final step 
 
 #### Update on July 21, 2018
 - Need to fix audio produce no sound on give_your_heart_a_break and pay_phone
 - So Sick doesn't work
+
+
+#### Update on July 23, 2018
+- Maybe try to fix extraction for despacito
+
+#### Update on July 26, 2018
+- TODO: do the vocal alignment for apologize, despacito
