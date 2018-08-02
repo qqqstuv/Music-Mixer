@@ -159,21 +159,12 @@ def chord_alignment(chord_result):
     final_beat_length = Beat_lengths[best_beat_index]
     final_beat_shift = Beat_shift[best_beat_index]
     print("Beat best_per_index_is", final_beat_length)
-    print("Beat final_chord_order", final_chord_order)
+    print("Beat final_chord_order", sorted(final_chord_order.items(), key=lambda k: k[1]))
     print("Beat final_beat_shift", final_beat_shift)
     reversed_chord_order = {v: k for k, v in final_chord_order.items()}
     
-    # bar_per_chord = final_beat_length // 4 
-    # if len(final_chord_order) != final_beat_length // 4:
-    #     print(final_chord_order)
-    #     print("Final_chord_order's is not ",Beat_lengths[best_beat_index])
-    #     return chord_result, False
-    
     for i in range(len(chord_result)):
-        # print(chord_result[i], reversed_chord_order[((i - 1) % final_beat_length) // (final_beat_length // 4)])
         chord_result[i] = reversed_chord_order[((i - final_beat_shift) % final_beat_length) // (final_beat_length // 4)]
-        # chord_result[i] = reversed_chord_order[  ((i % final_beat_length) // (final_beat_length // 4) ) % 4 + final_beat_shift]
-        # print(chord_result[i])
     return chord_result, True
         
 
