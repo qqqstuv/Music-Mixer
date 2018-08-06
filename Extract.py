@@ -87,3 +87,4 @@ def debugExtract(song_name):
 
 
 fullExtract(sys.argv[1])
+# debugExtract(sys.argv[1])

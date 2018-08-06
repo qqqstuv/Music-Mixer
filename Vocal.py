@@ -12,13 +12,11 @@ class Vocal:
         self.file_name1 = file_name1
         self.file_name2 = file_name2
 
-        # file_name = 'where_is_the_love.wav'
         self.y, sr = librosa.load(file_name1)
         self.y_D = librosa.stft(self.y)
         y_harmonic_component, y_percussive_component = librosa.decompose.hpss(self.y_D)
         y_harmonic = librosa.istft(y_harmonic_component)
 
-        # file_name2 = 'where_is_the_love_vocal.wav'
         self.y_2, self.sr = librosa.load(file_name2)
 
 
