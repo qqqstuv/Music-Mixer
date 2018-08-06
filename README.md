@@ -12,7 +12,7 @@ To create a software that automatically mixes two songs together
 
 ## Overview
 
-![alt text](https://github.com/dukeng/Music-Mixer/overview.png "Logo Title Text 1")
+![alt text](https://github.com/dukeng/Music-Mixer/blob/master/overview.png "Logo Title Text 1")
 
 ## How to run
 
