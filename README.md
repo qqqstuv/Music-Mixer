@@ -31,3 +31,6 @@ python Vocal.py <song_name.wav> <vocal_name.wav>
 python Reassemble.py <beat_name.wav> <vocal_name.wav> 
 ```
 
+### Samples
+
+Sample can be found in the compressed folder
